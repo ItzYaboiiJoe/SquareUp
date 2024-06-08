@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform pos;
     [SerializeField] private float jumpTime = 0.2f;
 
+    [SerializeField] private float crouchHeight = 0.5f;
+
     private bool isGrounded = false;
     public bool isjumping = false;
     private float jumpTimer;
@@ -53,6 +55,17 @@ public class Movement : MonoBehaviour
             isjumping = false;
         }
         #endregion
+
+
+
+        if(isGrounded && Input.GetButton("Crouch"))
+        {
+            sprite.localScale = new Vector3(sprite.localScale.x, crouchHeight, sprite.localScale.z);
+        }
+        if(Input.GetButtonUp("Crouch"))
+        {
+            sprite.localScale = new Vector3(sprite.localScale.x, 1f, sprite.localScale.z);
+        }
     }
 
 
