@@ -196,10 +196,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ccf831884385f44a4f637208a8c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  sprite: {fileID: 0}
   jumpForce: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  groundDist: 0.25
+  pos: {fileID: 0}
+  jumpTime: 0.2
+  crouchHeight: 0.5
+  isjumping: 0
 --- !u!1001 &1218169035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -548,5 +555,3 @@ SceneRoots:
   - {fileID: 1747039495}
   - {fileID: 1634093755}
   - {fileID: 6627876}
-  - {fileID: 324270446}
-  - {fileID: 120051339}
