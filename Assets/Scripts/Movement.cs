@@ -62,6 +62,9 @@ public class Movement : MonoBehaviour
         if (isGrounded && Input.GetButton("Crouch"))
         {
             sprite.localScale = new Vector3(sprite.localScale.x, crouchHeight, sprite.localScale.z);
+            if (isjumping){
+                sprite.localScale = new Vector3(sprite.localScale.x, crouchHeight, sprite.localScale.z);
+            }
         }
         if (Input.GetButtonUp("Crouch"))
         {
