@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float jumpTime = 0.2f;
 
     private bool isGrounded = false;
-    private bool isjumping = false;
+    public bool isjumping = false;
     private float jumpTimer;
 
 
