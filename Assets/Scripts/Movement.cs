@@ -5,7 +5,6 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform sprite;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundDist = 0.25f;
@@ -15,17 +14,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private float crouchHeight = 0.5f;
 
     private bool isGrounded = false;
-    public bool isjumping = false;
+    private bool isjumping = false;
     private float jumpTimer;
 
 
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(pos.position, groundDist, groundLayer);
-
-
-
-        #region JUMPING
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
@@ -54,6 +49,7 @@ public class Movement : MonoBehaviour
         {
             isjumping = false;
         }
+<<<<<<< HEAD
         #endregion
 
 
@@ -66,7 +62,7 @@ public class Movement : MonoBehaviour
         {
             sprite.localScale = new Vector3(sprite.localScale.x, 1f, sprite.localScale.z);
         }
+=======
+>>>>>>> parent of 89ffa0d (Merge branch 'main' of https://github.com/ItzYaboiiJoe/SquareUp)
     }
-
-
 }
