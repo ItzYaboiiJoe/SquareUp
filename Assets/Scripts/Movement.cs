@@ -30,19 +30,15 @@ public class Movement : MonoBehaviour
 
         #region JUMPING
 
-        if (isGrounded)
-        {
-            isjumping = false;
-        }
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             isjumping = true;
-            jumpTimer = 0f; //This is suppose to reset the jumptimer so player can jump again
+          //  jumpTimer = 0f; //This is suppose to reset the jumptimer so player can jump again
             rb.velocity = Vector2.up * jumpForce;
         }
 
-        if (isjumping && Input.GetButton("Jump"))
+        if (Input.GetButton("Jump"))
         {
             if (jumpTimer < jumpTime)
             {
@@ -56,14 +52,16 @@ public class Movement : MonoBehaviour
             }    
         }
 
+
         if (Input.GetButtonUp("Jump"))
         {
             isjumping = false;
         }
+        
 
         #endregion
 
-/*
+
     //THIS FEATURE IS BREAKING THE CONTROL SETUP. I need to debug and fix.
         if (isGrounded && Input.GetButton("Crouch"))
         {
@@ -80,7 +78,7 @@ public class Movement : MonoBehaviour
         {
             sprite.localScale = new Vector3(sprite.localScale.x, 1f, sprite.localScale.z);
         }
-        */
+        
     }
 
 }
