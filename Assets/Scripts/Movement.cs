@@ -68,6 +68,6 @@ public class Movement : MonoBehaviour
             sprite.localScale = new Vector3(sprite.localScale.x, 1f, sprite.localScale.z);
         }
     }
-
+    // Delete this later
 
 }
