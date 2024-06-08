@@ -5,20 +5,27 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform sprite;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundDist = 0.25f;
     [SerializeField] private Transform pos;
     [SerializeField] private float jumpTime = 0.2f;
 
+    [SerializeField] private float crouchHeight = 0.5f;
+
     private bool isGrounded = false;
-    private bool isjumping = false;
+    public bool isjumping = false;
     private float jumpTimer;
 
 
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(pos.position, groundDist, groundLayer);
+
+
+
+        #region JUMPING
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
@@ -47,5 +54,19 @@ public class Movement : MonoBehaviour
         {
             isjumping = false;
         }
+        #endregion
+
+
+
+        if(isGrounded && Input.GetButton("Crouch"))
+        {
+            sprite.localScale = new Vector3(sprite.localScale.x, crouchHeight, sprite.localScale.z);
+        }
+        if(Input.GetButtonUp("Crouch"))
+        {
+            sprite.localScale = new Vector3(sprite.localScale.x, 1f, sprite.localScale.z);
+        }
     }
+
+
 }
