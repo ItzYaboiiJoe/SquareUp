@@ -8,25 +8,44 @@ public class Movement : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundDist = 0.25f;
-    [SerializeField] private float jumptime = 0.5f;
     [SerializeField] private Transform pos;
+    [SerializeField] private float jumpTime = 0.2f;
 
     private bool isGrounded = false;
-    private bool isJumping = false;
-   // private LayerMask groundLayer;
+    private bool isjumping = false;
+    private float jumpTimer;
+
 
     private void Update()
     {
-       isGrounded = Physics2D.OverlapCircle(pos.position, groundDist, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(pos.position, groundDist, groundLayer);
 
-        if (isGrounded && Input.GetButtonDown("Jump")){
-            isJumping = true;
-           rb.velocity = Vector2.up * jumpForce;
-          System.Console.WriteLine("THIS COMMAND DOES JUMPY SHGIT");
+        if (isGrounded && Input.GetButtonDown("Jump"))
+        {
+            isjumping = true;
+            rb.velocity = Vector2.up * jumpForce;
         }
-        if (isJumping && Input.GetButton("Jump")){
-            rb.velocity = Vector2.up * jumpForce
-;        }
-        
+
+        if (Input.GetButton("Jump"))
+        {
+            if (jumpTimer < jumpTime)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+
+                jumpTimer += Time.deltaTime;
+            }
+            else
+            {
+                isjumping = false;
+            }
+
+
+            isjumping = false;
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            isjumping = false;
+        }
     }
 }
