@@ -10,15 +10,17 @@ public class Movement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundDist = 0.25f;
     [SerializeField] private Transform pos;
-    [SerializeField] private float jumpTime = 0.2f;
+    [SerializeField] private float jumpTime = 0.3f;
 
     [SerializeField] private float crouchHeight = 0.5f;
 
     private bool isGrounded = false;
-    public bool isjumping = false;
+    private bool isjumping = false;
     private float jumpTimer;
-    private float deleteMe;
 
+
+
+    //This code is now broken to when is key is tapped it cannot be pressed again. Attempting to debug the code here. 
 
     private void Update()
     {
@@ -28,13 +30,19 @@ public class Movement : MonoBehaviour
 
         #region JUMPING
 
+        if (isGrounded)
+        {
+            isjumping = false;
+        }
+
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             isjumping = true;
+            jumpTimer = 0f; //This is suppose to reset the jumptimer so player can jump again
             rb.velocity = Vector2.up * jumpForce;
         }
 
-        if (Input.GetButton("Jump"))
+        if (isjumping && Input.GetButton("Jump"))
         {
             if (jumpTimer < jumpTime)
             {
@@ -45,32 +53,34 @@ public class Movement : MonoBehaviour
             else
             {
                 isjumping = false;
-            }
-
-
-            isjumping = false;
+            }    
         }
 
         if (Input.GetButtonUp("Jump"))
         {
             isjumping = false;
         }
+
         #endregion
 
-
-
+/*
+    //THIS FEATURE IS BREAKING THE CONTROL SETUP. I need to debug and fix.
         if (isGrounded && Input.GetButton("Crouch"))
         {
             sprite.localScale = new Vector3(sprite.localScale.x, crouchHeight, sprite.localScale.z);
+
+
             if (isjumping){
-                sprite.localScale = new Vector3(sprite.localScale.x, crouchHeight, sprite.localScale.z);
+                sprite.localScale = new Vector3(sprite.localScale.x, 1f, sprite.localScale.z);
             }
+           
+
         }
         if (Input.GetButtonUp("Crouch"))
         {
             sprite.localScale = new Vector3(sprite.localScale.x, 1f, sprite.localScale.z);
         }
+        */
     }
-    // Delete this later
 
 }
