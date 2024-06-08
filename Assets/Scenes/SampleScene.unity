@@ -198,13 +198,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6627875}
-  sprite: {fileID: 557946295}
+  sprite: {fileID: 1218169036}
   jumpForce: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   groundDist: 0.25
-  pos: {fileID: 1218169036}
+  pos: {fileID: 557946295}
   jumpTime: 0.2
   crouchHeight: 0.5
   isjumping: 0
