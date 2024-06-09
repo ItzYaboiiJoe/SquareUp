@@ -10,10 +10,14 @@ public class ScoreManager : MonoBehaviour
 
     public float scoreCount;
     public float highScoreCount;
-
     public float pointsPerSecond;
 
     public bool scoreIncreasing;
+
+    void Start()
+    {
+
+    }
 
     void Update()
     {
