@@ -5,6 +5,8 @@ using UnityEngine;
 public class ObstacleMoving : MonoBehaviour
 
 {
+    
+
     public float speed = 1.0f;
     public Vector3 targetPostion;
     // Start is called before the first frame update
