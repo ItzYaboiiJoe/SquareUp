@@ -20,5 +20,3 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 }
-
-

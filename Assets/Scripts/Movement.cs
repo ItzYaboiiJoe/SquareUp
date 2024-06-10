@@ -20,9 +20,17 @@ public class Movement : MonoBehaviour
 
     private Vector3 originalScale;
 
+    // Add a public boolean to control the jump sound
+    public bool jumpSoundEnabled = true;
+
     private void Start()
     {
         originalScale = sprite.localScale;
+    }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
@@ -35,7 +43,10 @@ public class Movement : MonoBehaviour
             isJumping = true;
             rb.velocity = Vector2.up * jumpForce;
             jumpTimer = 0;
-            jumpSound.Play();
+            if (jumpSoundEnabled)
+            {
+                jumpSound.Play();
+            }
         }
 
         if (isJumping && Input.GetButton("Jump"))
@@ -67,5 +78,11 @@ public class Movement : MonoBehaviour
             sprite.localScale = originalScale;
         }
         #endregion
+    }
+
+    // Method to toggle the jump sound
+    public void ToggleJumpSound()
+    {
+        jumpSoundEnabled = !jumpSoundEnabled;
     }
 }

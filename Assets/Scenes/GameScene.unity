@@ -264,6 +264,7 @@ MonoBehaviour:
   crouchHeightFactor: 0.3
   jumpSound: {fileID: 2019521219}
   isJumping: 0
+  jumpSoundEnabled: 1
 --- !u!1 &399753274
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +397,50 @@ MonoBehaviour:
   targetPosition: {x: -13, y: 11.315, z: 0}
   playerTransform: {fileID: 6627876}
   despawnMargin: 35
+--- !u!1 &855824924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 855824926}
+  - component: {fileID: 855824925}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &855824925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855824924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2384bd107d566cf479e291153c39fedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &855824926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855824924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 727.55383, y: 393.5569, z: -4.0849957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &866033834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,3 +1210,4 @@ SceneRoots:
   - {fileID: 866033838}
   - {fileID: 1530206009}
   - {fileID: 674336182}
+  - {fileID: 855824926}
