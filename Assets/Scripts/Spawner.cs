@@ -2,39 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class Spawner : MonoBehaviour
 {
-
-    [SerializeField] private GameObject[] obsPrefabs;
-    public float obsSpawnTime = 2f;
-    public float obsSpeed = 5f;
+    [SerializeField] private GameObject[] obsPrefabs; // Array of obstacle prefabs
+    [SerializeField] private Transform spawnPoint; // Reference to the spawn point object
+    [SerializeField] private float obsSpawnTime = 2f; // Time interval between spawns
+    [SerializeField] private float obsSpeed = 5f; // Speed of spawned obstacles
+    public Vector3 targetPosition;
 
     private float timeUntilObsSpawn;
 
-    private void Update()
+    private void Start()
     {
-        SpawnLoop();
-         
+        timeUntilObsSpawn = 0f;
     }
 
-    private void SpawnLoop(){
+    private void Update()
+    {
         timeUntilObsSpawn += Time.deltaTime;
 
-        
-        if(timeUntilObsSpawn >= obsSpawnTime){
-            Spawn();
-            timeUntilObsSpawn = 0f;
+        if (timeUntilObsSpawn >= obsSpawnTime)
+        {
+            Spawn(); // Call the spawn method
+            timeUntilObsSpawn = 0f; // Reset the timer
         }
     }
 
-    private void Spawn(){
+    private void Spawn()
+    {
         GameObject obstacleToSpawn = obsPrefabs[Random.Range(0, obsPrefabs.Length)];
 
-        GameObject spawnedObstacle = Instantiate(obstacleToSpawn, transform.position, Quaternion.identity);
-        Debug.Log("Obs position is" + transform.position);
-        Rigidbody2D obstacleRB  = spawnedObstacle.GetComponent<Rigidbody2D>();
+        GameObject spawnedObstacle = Instantiate(obstacleToSpawn, spawnPoint.position, Quaternion.identity);
+        Debug.Log("Obs position is" + spawnPoint.position);
+
+        ObstacleMoving obstacleMoving = spawnedObstacle.GetComponent<ObstacleMoving>();
+        if (obstacleMoving != null)
+        {
+            obstacleMoving.SetTargetPosition(targetPosition);
+            obstacleMoving.speed = obsSpeed; // Set the speed if needed
+        }
+
+        Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
         obstacleRB.velocity = Vector2.left * obsSpeed;
     }
 }

@@ -5,29 +5,17 @@ using UnityEngine;
 public class ObstacleMoving : MonoBehaviour
 
 {
-    
-
     public float speed = 1.0f;
-    public Vector3 targetPostion;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Vector3 targetPosition;
 
-    // Update is called once per frame
     void Update()
     {
-        //calculate the speed of obstacle
-
         //Move obstacle towards the target postion
-        transform.position = Vector3.MoveTowards(transform.position, targetPostion, speed);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
 
-
-    //create pop/pull functions to pull obstacle info to our arry
-    // next step create a method to remove the item that has spawned AKA push
-
-    //two methods will run simitansely to get obstacle info and clear from the q in the array
-    // int array [] = new array [spike,bullet,trap,rock][coin1,nothing,nothing,cherry]
+    public void SetTargetPosition(Vector3 position)
+    {
+        targetPosition = position;
+    }
 }
