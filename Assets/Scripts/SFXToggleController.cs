@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToggleController : MonoBehaviour
+public class SFXToggleController : MonoBehaviour
 {
 	public bool isOn;
 

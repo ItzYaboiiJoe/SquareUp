@@ -215,6 +215,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &169186355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1270289882852910, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+  m_PrefabInstance: {fileID: 1775544166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &346606790
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +245,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346606790}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -349,6 +354,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346606790}
   m_CullTransparentMesh: 1
+--- !u!114 &366507413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114843458076090440, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+  m_PrefabInstance: {fileID: 1775544166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &856939998
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +653,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 873540258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1283733232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1600659033580190, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+  m_PrefabInstance: {fileID: 1775544166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1297362305
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +792,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297362305}
   m_CullTransparentMesh: 1
+--- !u!1 &1355094306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776294365576946, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+  m_PrefabInstance: {fileID: 1775544166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477160758
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114295614051445386, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114295614051445386, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -948,6 +974,10 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114813106202897008, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 1616657202}
     - target: {fileID: 224340200432122086, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1053,6 +1083,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music
       objectReference: {fileID: 0}
+    - target: {fileID: 114295614051445386, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295614051445386, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1831625223}
+    - target: {fileID: 114295614051445386, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Switching
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295614051445386, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MusicToggleController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295614051445386, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 114813106202897008, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
       propertyPath: speed
       value: 2
@@ -1141,14 +1191,45 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114813106202897008, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 224340200432122086, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 346606791}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1500480367090248, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1831625223}
   m_SourcePrefab: {fileID: 100100000, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+--- !u!1 &1831625220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1500480367090248, guid: f736ef895720643b3b2e8a3a5f092df6, type: 3}
+  m_PrefabInstance: {fileID: 1775544166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1831625223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831625220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd4553f070267545ad6c5190e42cbac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 1
+  onColorBg: {r: 0.33333334, g: 0.7176471, b: 0.101960786, a: 1}
+  offColorBg: {r: 0.87058824, g: 0.18039216, b: 0.3019608, a: 1}
+  toggleBgImage: {fileID: 366507413}
+  toggle: {fileID: 1616657202}
+  handle: {fileID: 1283733232}
+  handleOffset: 4
+  onIcon: {fileID: 169186355}
+  offIcon: {fileID: 1355094306}
+  speed: 2
 --- !u!1 &2128641808
 GameObject:
   m_ObjectHideFlags: 0

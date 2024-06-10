@@ -28,11 +28,6 @@ public class Movement : MonoBehaviour
         originalScale = sprite.localScale;
     }
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(pos.position, groundDist, groundLayer);
