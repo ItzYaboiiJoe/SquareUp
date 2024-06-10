@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if(GameManger.Instance.isPlaying){
+       // if(GameManger.Instance.isPlaying){ //I will fix this game instance info later
         timeUntilObsSpawn -= Time.deltaTime;
 
         if (timeUntilObsSpawn <= 0f)
@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
             Spawn(); // Call the spawn method
             timeUntilObsSpawn = obsSpawnTime; // Reset the timer
         }
-        }
+      //  }
 
     }
 
