@@ -23,4 +23,11 @@ public class ObstacleMoving : MonoBehaviour
         //Move obstacle towards the target postion
         transform.position = Vector3.MoveTowards(transform.position, targetPostion, speed);
     }
+
+
+    //create pop/pull functions to pull obstacle info to our arry
+    // next step create a method to remove the item that has spawned AKA push
+
+    //two methods will run simitansely to get obstacle info and clear from the q in the array
+    // int array [] = new array [spike,bullet,trap,rock][coin1,nothing,nothing,cherry]
 }
