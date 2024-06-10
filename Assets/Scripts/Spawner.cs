@@ -9,41 +9,54 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float obsSpawnTime = 2f; // Time interval between spawns
     [SerializeField] private float obsSpeed = 5f; // Speed of spawned obstacles
     public Vector3 targetPosition;
+    [SerializeField] private Transform playerTransform; // Reference to the player's transform
+    [SerializeField] private float despawnMargin = 10f; // Margin to despawn behind the player
 
     private float timeUntilObsSpawn;
 
     private void Start()
     {
-        timeUntilObsSpawn = 0f;
+        timeUntilObsSpawn = obsSpawnTime; // Initialize to spawn an obstacle at the set interval
     }
 
     private void Update()
     {
-        timeUntilObsSpawn += Time.deltaTime;
+        timeUntilObsSpawn -= Time.deltaTime;
 
-        if (timeUntilObsSpawn >= obsSpawnTime)
+        if (timeUntilObsSpawn <= 0f)
         {
             Spawn(); // Call the spawn method
-            timeUntilObsSpawn = 0f; // Reset the timer
+            timeUntilObsSpawn = obsSpawnTime; // Reset the timer
         }
     }
 
     private void Spawn()
     {
-        // Debug here
+        // Select a random obstacle prefab from the array
         GameObject obstacleToSpawn = obsPrefabs[Random.Range(0, obsPrefabs.Length)];
-
+        
+        // Instantiate the obstacle at the spawn point
         GameObject spawnedObstacle = Instantiate(obstacleToSpawn, spawnPoint.position, Quaternion.identity);
-        Debug.Log("Obs position is" + spawnPoint.position);
+        Debug.Log("Spawned obstacle at position: " + spawnPoint.position);
 
-        ObstacleMoving obstacleMoving = spawnedObstacle.GetComponent<ObstacleMoving>();
-        if (obstacleMoving != null)
+        // Move the obstacle towards the target position
+        StartCoroutine(MoveObstacle(spawnedObstacle, targetPosition, obsSpeed));
+    }
+
+    private IEnumerator MoveObstacle(GameObject obstacle, Vector3 targetPos, float speed)
+    {
+        while (true)
         {
-            obstacleMoving.SetTargetPosition(targetPosition);
-            obstacleMoving.speed = obsSpeed; // Set the speed if needed
+            obstacle.transform.position = Vector3.MoveTowards(obstacle.transform.position, targetPos, speed * Time.deltaTime);
+            
+            // Check if the obstacle has passed the player's position plus the despawn margin
+            if (obstacle.transform.position.x < playerTransform.position.x - despawnMargin)
+            {
+                Destroy(obstacle);
+                yield break;
+            }
+            
+            yield return null;
         }
-
-        Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
-        obstacleRB.velocity = Vector2.left * obsSpeed;
     }
 }
