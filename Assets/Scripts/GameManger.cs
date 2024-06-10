@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class GameManger : MonoBehaviour
@@ -29,6 +30,9 @@ public void GameOver(){
     isPlaying = false;
 }
     public int PrettyScore(){
-        return Mathf.RoundToInt(currentScore);
+        int test;
+        test = Mathf.RoundToInt(currentScore);
+
+        return test;
     }
 }
