@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
+        // Debug here
         GameObject obstacleToSpawn = obsPrefabs[Random.Range(0, obsPrefabs.Length)];
 
         GameObject spawnedObstacle = Instantiate(obstacleToSpawn, spawnPoint.position, Quaternion.identity);

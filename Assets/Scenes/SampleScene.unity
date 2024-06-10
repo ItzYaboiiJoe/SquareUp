@@ -255,7 +255,7 @@ MonoBehaviour:
   obsPrefabs: []
   spawnPoint: {fileID: 674336182}
   obsSpawnTime: 1
-  obsSpeed: 100
+  obsSpeed: 20
   targetPosition: {x: -10.4, y: 16.805, z: 0}
 --- !u!1 &674679237
 GameObject:
