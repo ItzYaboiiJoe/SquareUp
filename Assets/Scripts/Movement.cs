@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform pos;
     [SerializeField] private float jumpTime = 0.2f;
     [SerializeField] private float crouchHeightFactor = 0.5f;
+    [SerializeField] private AudioSource jumpSound;
 
     private bool isGrounded = false;
     public bool isJumping = false;
@@ -34,6 +35,7 @@ public class Movement : MonoBehaviour
             isJumping = true;
             rb.velocity = Vector2.up * jumpForce;
             jumpTimer = 0;
+            jumpSound.Play();
         }
 
         if (isJumping && Input.GetButton("Jump"))
