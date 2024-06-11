@@ -46,6 +46,8 @@ public class SFXToggleController : MonoBehaviour
 
 	void Start()
 	{
+		isOn = PlayerPrefs.GetInt("SFXToggleState", 1) == 1;
+
 		if (isOn)
 		{
 			toggleBgImage.color = onColorBg;
@@ -152,6 +154,8 @@ public class SFXToggleController : MonoBehaviour
 					break;
 			}
 
+			PlayerPrefs.SetInt("SFXToggleState", isOn ? 1 : 0);
+			PlayerPrefs.Save();
 		}
 	}
 
