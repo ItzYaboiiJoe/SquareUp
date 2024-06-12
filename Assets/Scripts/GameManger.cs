@@ -4,35 +4,45 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class GameManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    // Singleton instance
+    public static GameManager Instance { get; private set; }
+
+    // Reference to the Movement script
+   // private Movement movement;
+
+    // Reference to the AudioManager
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        // Ensure only one instance of GameManager exists
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     
-    public static GameManger Instance;
-    public void Awake(){
-        if(Instance == null) Instance = this;
-    }
 
-    public float currentScore = 0f;
+      // Find the Movement instance in the scene
+    movement = FindObjectOfType<Movement>();
 
-public bool isPlaying = false;
-
-public void Update(){
-    if(isPlaying){
-        currentScore += Time.deltaTime;
-    }
-    if(Input.GetKeyDown("k")){
-        isPlaying = true;
-    }
-}
-
-public void GameOver(){
-    currentScore = 0;
-    isPlaying = false;
-}
-    public int PrettyScore(){
-        int test;
-        test = Mathf.RoundToInt(currentScore);
-
-        return test;
+        // Check if the reference is null
+        if (movement == null)
+        {
+            Debug.LogError("Movement script not found.");
+        }
+        audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.LogError("AudioManager script not found in the scene.");
+        }
     }
 }
+

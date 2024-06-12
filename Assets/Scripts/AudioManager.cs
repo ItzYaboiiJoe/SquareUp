@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     public AudioSource soundEffectSource;
+    public bool soundEffectsOn = true;
+
 
     void Awake()
     {
@@ -13,6 +15,11 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            Debug.Log("Audio manager instance has been set");
+
+            //load the settings 
+            soundEffectsOn = PlayerPrefs.GetInt("SoundEffectsOn", 1) == 1;
+            soundEffectSource.mute = !soundEffectsOn;
         }
         else
         {
@@ -22,7 +29,23 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySoundEffect(AudioClip soundClip)
     {
-        soundEffectSource.PlayOneShot(soundClip);
+        if(soundEffectsOn)
+        {
+            soundEffectSource.PlayOneShot(soundClip);
+        }  
+    }
+
+    public void ToggleSoundEffects(bool isOn)
+    {
+    if (soundEffectSource != null)
+    {
+        soundEffectsOn = isOn;
+        soundEffectSource.mute = !isOn;
+    }
+    else
+    {
+        Debug.LogError("AudioSource is null in AudioManager.ToggleSoundEffects");
+    }
     }
 }
 

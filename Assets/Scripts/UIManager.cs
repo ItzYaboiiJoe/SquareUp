@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreUI;
     // Start is called before the first frame update
-    GameManger gm;
+   
     void Start()
     {
         

@@ -12,18 +12,35 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform pos;
     [SerializeField] private float jumpTime = 0.2f;
     [SerializeField] private float crouchHeightFactor = 0.5f;
-    [SerializeField] private AudioClip jumpSound; // Reference to the jump sound effect
+    [SerializeField] private AudioSource jumpSound;
 
     private bool isGrounded = false;
     public bool isJumping = false;
     private float jumpTimer;
+    
 
     private Vector3 originalScale;
+
+    // Add a public boolean to control the jump sound
+    public bool jumpSoundEnabled = true;
+
+    //Add refernce to audio manager 
+    private AudioManager audioManager;
+
+     // Singleton instance
+    public static Movement Instance { get; private set; }
 
     private void Start()
     {
         originalScale = sprite.localScale;
+        audioManager = AudioManager.instance;
     }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+    
 
     private void Update()
     {
@@ -35,7 +52,10 @@ public class Movement : MonoBehaviour
             isJumping = true;
             rb.velocity = Vector2.up * jumpForce;
             jumpTimer = 0;
-            AudioManager.instance.PlaySoundEffect(jumpSound); // Play the jump sound effect
+            if(jumpSoundEnabled)
+            {
+                jumpSound.Play();
+            }
         }
 
         if (isJumping && Input.GetButton("Jump"))
@@ -67,5 +87,11 @@ public class Movement : MonoBehaviour
             sprite.localScale = originalScale;
         }
         #endregion
+    }
+
+    // Method to toggle the jump sound
+    public void ToggleJumpSound()
+    {
+        jumpSoundEnabled = !jumpSoundEnabled;
     }
 }

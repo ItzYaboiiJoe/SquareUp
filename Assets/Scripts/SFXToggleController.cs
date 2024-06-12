@@ -31,6 +31,10 @@ public class SFXToggleController : MonoBehaviour
 
 	private bool switching = false;
 
+	//this creates a referenc e for audioManager into the controller
+	private AudioManager audioManager;
+	private Movement movement; //gets movemment script info
+
 
 	void Awake()
 	{
@@ -41,6 +45,21 @@ public class SFXToggleController : MonoBehaviour
 		onPosX = (toggleSizeX / 2) - (handleSize / 2) - handleOffset;
 		offPosX = onPosX * -1;
 
+
+		  // Get references from the GameManager
+      
+        audioManager = GameManager.Instance.audioManager;
+
+	
+        if (movement == null)
+        {
+            Debug.LogError("Movement reference is null in SFXToggleController");
+        }
+
+        if (audioManager == null)
+        {
+            Debug.LogError("AudioManager reference is null in SFXToggleController");
+        }
 	}
 
 
@@ -72,18 +91,33 @@ public class SFXToggleController : MonoBehaviour
 			Toggle(isOn);
 		}
 	}
-
+	//This is where we place the info to activate the audio 
+	//The source developer speleld stuff wrong LOL
 	public void DoYourStaff()
 	{
 		Debug.Log(isOn);
+		if(audioManager !=null)
+		{
+			audioManager.ToggleSoundEffects(isOn);
+		}
+		else
+		{
+			Debug.LogError("Audiuo manager is null in the method do your staff");
+		}
+		if(movement != null)
+		{
+			movement.ToggleJumpSound();
+		}
+		else
+		{
+			Debug.LogError("Movement is null in do otyu staff");
+		}
 	}
 
 	public void Switching()
 	{
 		switching = true;
 	}
-
-
 
 	public void Toggle(bool toggleStatus)
 	{
@@ -136,27 +170,15 @@ public class SFXToggleController : MonoBehaviour
 
 	void StopSwitching()
 	{
-		if (t > 1.0f)
-		{
-			switching = false;
-
-			t = 0.0f;
-			switch (isOn)
-			{
-				case true:
-					isOn = false;
-					DoYourStaff();
-					break;
-
-				case false:
-					isOn = true;
-					DoYourStaff();
-					break;
-			}
-
-			PlayerPrefs.SetInt("SFXToggleState", isOn ? 1 : 0);
-			PlayerPrefs.Save();
-		}
+	 if (t > 1.0f)
+        {
+            switching = false;
+            t = 0.0f;
+            isOn = !isOn;
+            DoYourStaff();
+            PlayerPrefs.SetInt("SFXToggleState", isOn ? 1 : 0);
+            PlayerPrefs.Save();
+        }
 	}
 
 }
