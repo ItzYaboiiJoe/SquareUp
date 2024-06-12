@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     // Reference to the Movement script
-   // private Movement movement;
+    private Movement movement;
 
     // Reference to the AudioManager
     public AudioManager audioManager;
