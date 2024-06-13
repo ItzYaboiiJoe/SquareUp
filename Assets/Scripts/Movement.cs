@@ -12,7 +12,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform pos;
     [SerializeField] private float jumpTime = 0.2f;
     [SerializeField] private float crouchHeightFactor = 0.5f;
-    [SerializeField] private AudioSource jumpSound;
 
     private bool isGrounded = false;
     public bool isJumping = false;
@@ -24,8 +23,6 @@ public class Movement : MonoBehaviour
     // Add a public boolean to control the jump sound
     public bool jumpSoundEnabled = true;
 
-    //Add refernce to audio manager 
-    private AudioManager audioManager;
 
      // Singleton instance
     public static Movement Instance { get; private set; }
@@ -33,12 +30,31 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         originalScale = sprite.localScale;
-        audioManager = AudioManager.instance;
+
+        // Check if SoundManager instance is available
+        if (SoundManager.Instance == null)
+        {
+            Debug.LogError("SoundManager instance not found in Movement script.");
+        }
+
+        // Sync jump sound enabled state with SoundManager
+        jumpSoundEnabled = !SoundManager.Instance.effectsSource.mute;
     }
 
     void Awake()
     {
+        //Make sure objects stays away in all scenes
         DontDestroyOnLoad(this.gameObject);
+
+        // Implement singleton pattern
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     
 
@@ -52,9 +68,9 @@ public class Movement : MonoBehaviour
             isJumping = true;
             rb.velocity = Vector2.up * jumpForce;
             jumpTimer = 0;
-            if(jumpSoundEnabled)
+            if(jumpSoundEnabled && SoundManager.Instance != null)
             {
-                jumpSound.Play();
+                SoundManager.Instance.PlayJumpSound();
             }
         }
 
@@ -93,5 +109,11 @@ public class Movement : MonoBehaviour
     public void ToggleJumpSound()
     {
         jumpSoundEnabled = !jumpSoundEnabled;
+
+        // Sync the jump sound state with SoundManager
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.ToggleEffects(jumpSoundEnabled);
+        }
     }
 }

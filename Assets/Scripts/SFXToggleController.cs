@@ -31,9 +31,6 @@ public class SFXToggleController : MonoBehaviour
 
 	private bool switching = false;
 
-	//this creates a referenc e for audioManager into the controller
-	private AudioManager audioManager;
-	private Movement movement; //gets movemment script info
 
 
 	void Awake()
@@ -46,20 +43,10 @@ public class SFXToggleController : MonoBehaviour
 		offPosX = onPosX * -1;
 
 
-		  // Get references from the GameManager
-      
-        audioManager = GameManager.Instance.audioManager;
-
-	
-        if (movement == null)
-        {
-            Debug.LogError("Movement reference is null in SFXToggleController");
-        }
-
-        if (audioManager == null)
-        {
-            Debug.LogError("AudioManager reference is null in SFXToggleController");
-        }
+		  if(SoundManager.Instance == null)
+		{
+			Debug.LogError("SoundManager refernce is null in SFToggleController");
+		}
 	}
 
 
@@ -96,21 +83,13 @@ public class SFXToggleController : MonoBehaviour
 	public void DoYourStaff()
 	{
 		Debug.Log(isOn);
-		if(audioManager !=null)
+		if(SoundManager.Instance != null)
 		{
-			audioManager.ToggleSoundEffects(isOn);
+			SoundManager.Instance.ToggleEffects(isOn);
 		}
 		else
 		{
-			Debug.LogError("Audiuo manager is null in the method do your staff");
-		}
-		if(movement != null)
-		{
-			movement.ToggleJumpSound();
-		}
-		else
-		{
-			Debug.LogError("Movement is null in do otyu staff");
+			Debug.LogError("Sound manager is null in method doyourstaff");
 		}
 	}
 
