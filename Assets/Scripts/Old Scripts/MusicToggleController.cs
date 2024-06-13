@@ -76,7 +76,8 @@ public class MusicToggleController : MonoBehaviour
 	public void DoYourStaff()
 	{
 		Debug.Log(isOn);
-	}
+		SoundManager.Instance.ToggleMusic(isOn);
+    }
 
 	public void Switching()
 	{
