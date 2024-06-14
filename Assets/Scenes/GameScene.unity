@@ -248,21 +248,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6627874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6ccf831884385f44a4f637208a8c745, type: 3}
+  m_Script: {fileID: 11500000, guid: e575a7863eacfbe469f5b22e338d4cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 6627875}
-  sprite: {fileID: 1218169036}
-  jumpForce: 40
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  groundDist: 0.25
-  pos: {fileID: 1437915446}
-  jumpTime: 0.3
-  crouchHeightFactor: 0.3
-  isJumping: 0
-  jumpSoundEnabled: 1
+  jumpForce: 100
 --- !u!1 &365745188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1805615362
 Transform:
   m_ObjectHideFlags: 0
@@ -2035,7 +2024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2016186985
 Transform:
   m_ObjectHideFlags: 0
