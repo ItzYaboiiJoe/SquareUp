@@ -248,21 +248,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6627874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6ccf831884385f44a4f637208a8c745, type: 3}
+  m_Script: {fileID: 11500000, guid: e575a7863eacfbe469f5b22e338d4cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 6627875}
-  sprite: {fileID: 1218169036}
-  jumpForce: 40
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  groundDist: 0.25
-  pos: {fileID: 1437915446}
-  jumpTime: 0.3
-  crouchHeightFactor: 0.3
-  isJumping: 0
-  jumpSoundEnabled: 1
+  jumpForce: 10
 --- !u!1 &365745188
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +536,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674336182}
-  - component: {fileID: 674336183}
   m_Layer: 8
   m_Name: ObstSpawner
   m_TagString: Obstacle
@@ -570,27 +558,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &674336183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674336181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac436685cd86224c9ef85bbae47c8bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obsPrefabs:
-  - {fileID: 7785648797967072311, guid: fd6cffae433bf5044ba560889d10e575, type: 3}
-  - {fileID: 1307816825624009880, guid: 9d261cad277c43a46a4643ba0a5eb67f, type: 3}
-  spawnPoint: {fileID: 674336182}
-  obsSpawnTime: 5
-  obsSpeed: 50
-  targetPosition: {x: -13, y: 11.315, z: 0}
-  playerTransform: {fileID: 6627876}
-  despawnMargin: 35
 --- !u!1 &866033834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,7 +1890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1805615362
 Transform:
   m_ObjectHideFlags: 0
@@ -2057,7 +2024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2016186985
 Transform:
   m_ObjectHideFlags: 0
