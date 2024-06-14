@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Audio sources for playing background music and sound effects
     [Header("Audio Sources")]
     public AudioSource musicSource;  // Reference to the AudioSource for background music
     public AudioSource effectsSource; // Reference to the AudioSource for sound effects
 
-    // Audio clips for different sound effects
     [Header("Audio Clips")]
     public AudioClip jumpSoundClip;  // Audio clip for the jump sound
     public AudioClip backgroundMusicClip; // Audio clip for the background music
@@ -33,6 +31,16 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
+        if (musicSource == null || effectsSource == null)
+        {
+            Debug.LogError("AudioSource components are not assigned.");
+            return;
+        }
+
+        // Initialize the mute states based on PlayerPrefs
+        musicSource.mute = PlayerPrefs.GetInt("MusicMuted", 0) == 1;
+        effectsSource.mute = PlayerPrefs.GetInt("EffectsMuted", 0) == 1;
+
         // Play background music if the clip is assigned
         if (backgroundMusicClip != null)
         {
@@ -45,25 +53,41 @@ public class SoundManager : MonoBehaviour
     // Method to toggle background music on and off
     public void ToggleMusic(bool isOn)
     {
-        musicSource.mute = !isOn;
-        PlayerPrefs.SetInt("MusicMuted", isOn ? 0 : 1);
+        if (musicSource != null)
+        {
+            musicSource.mute = !isOn;
+            PlayerPrefs.SetInt("MusicMuted", isOn ? 0 : 1);
+        }
+        else
+        {
+            Debug.LogWarning("Music AudioSource is missing.");
+        }
     }
 
     // Method to toggle sound effects on and off
     public void ToggleEffects(bool isOn)
     {
-        effectsSource.mute = !isOn;
-        PlayerPrefs.SetInt("EffectsMuted", isOn ? 0 : 1);
+        if (effectsSource != null)
+        {
+            effectsSource.mute = !isOn;
+            PlayerPrefs.SetInt("EffectsMuted", isOn ? 0 : 1);
+        }
+        else
+        {
+            Debug.LogWarning("Effects AudioSource is missing.");
+        }
     }
 
     // Method to play the jump sound
     public void PlayJumpSound()
     {
-        if (jumpSoundClip != null)
+        if (effectsSource != null && jumpSoundClip != null)
         {
             effectsSource.PlayOneShot(jumpSoundClip);
         }
+        else
+        {
+            Debug.LogWarning("Effects AudioSource or jump sound clip is missing.");
+        }
     }
 }
-
-

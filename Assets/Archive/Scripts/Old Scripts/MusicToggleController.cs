@@ -76,8 +76,17 @@ public class MusicToggleController : MonoBehaviour
 	public void DoYourStaff()
 	{
 		Debug.Log(isOn);
-		SoundManager.Instance.ToggleMusic(isOn);
-    }
+
+		if (SoundManager.Instance != null)
+		{
+			SoundManager.Instance.ToggleMusic(isOn);
+		}
+		else
+		{
+			Debug.LogWarning("SoundManager instance is missing.");
+		}
+	}
+
 
 	public void Switching()
 	{
