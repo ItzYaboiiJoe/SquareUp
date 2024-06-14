@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     //this allow variable to be adjusted in settings
-   [SerializeField] public float jumpForce = 50f;
+    [SerializeField] public float jumpForce = 50f;
     private Rigidbody2D rb;
     private bool isGrounded;
 
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isGrounded && Input.GetButtonDown("Jump"))
+        if (isGrounded && Input.GetButtonDown("Jump"))
         {
             //JUMP COMMAND
             Jump();
@@ -29,14 +29,17 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        rb.velocity =  new Vector2(rb.velocity.x, jumpForce);
+        SoundEffectsManager.instance.PlaySound(SoundEffectsManager.instance.jumpSound);
+
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         isGrounded = false;
     }
     //check if player o nground based on layer asset
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.contacts[0].normal.y > 0.5f)
+        if (collision.contacts[0].normal.y > 0.5f)
         {
+
             isGrounded = true;
         }
     }
