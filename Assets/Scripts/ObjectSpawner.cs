@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
@@ -11,6 +12,10 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] public float spawnRate;
     [SerializeField] public float objectSpeed;
     public float nextSpawnTime = 0f;
+
+    //FROM OLD SCRIPT
+    [SerializeField] private Transform playerTransform; // Reference to the player's transform
+    [SerializeField] private float despawnMargin = 10f; // Margin to despawn behind the player
 
     private void Update()
     {
@@ -25,40 +30,29 @@ public class ObjectSpawner : MonoBehaviour
     //Handles the spawning of objects
     void SpawnObject()
     {
-        // Randomly select an object from the array
-        int randomIndex = Random.Range(0, objectSpawner.Length);
-        GameObject spawnedObject = Instantiate(objectSpawner[randomIndex], spawnPoint.position, Quaternion.identity);
+        // Select a random obstacle prefab from the array
+        GameObject obstacleToSpawn = objectSpawner[Random.Range(0, objectSpawner.Length)];
 
-        // Add a Rigidbody2D and Collider2D to the spawned object if not already present
-        if (spawnedObject.GetComponent<Rigidbody2D>() == null)
-        {
-            Rigidbody2D rb = spawnedObject.AddComponent<Rigidbody2D>();
-            rb.gravityScale = 0; // Set gravity scale to 0 for 2D side-scroller
-            rb.isKinematic = true; // Make it kinematic since we are moving it manually
-        }
-        if (spawnedObject.GetComponent<Collider2D>() == null)
-        {
-            Collider2D collider = spawnedObject.AddComponent<BoxCollider2D>(); // Assuming a BoxCollider2D
-            collider.isTrigger = true; // Set as trigger
-        }
+        // Instantiate the obstacle at the spawn point
+        GameObject spawnedObstacle = Instantiate(obstacleToSpawn, spawnPoint.position, Quaternion.identity);
+        Debug.Log("Spawned obstacle at position: " + spawnPoint.position);
 
-        // Add an Obstacle script to handle collision
-        if (spawnedObject.GetComponent<ObjectSpawner>() == null)
-        {
-            spawnedObject.AddComponent<ObjectSpawner>();
-        }
-
-        // Start moving the spawned object towards the player
-        StartCoroutine(MoveObjectTowardsPlayer(spawnedObject));
+        // Move the obstacle towards the target position
+        StartCoroutine(MoveObstacle(spawnedObstacle, player.position, objectSpeed));
     }
 
-    private IEnumerator MoveObjectTowardsPlayer(GameObject obj)
+    private IEnumerator MoveObstacle(GameObject obstacle, Vector3 targetPos, float speed)
     {
-        while (obj != null)
+        while (true)
         {
-            // Move the object towards the player
-            Vector2 direction = (player.position - obj.transform.position).normalized;
-            obj.transform.position += (Vector3)direction * objectSpeed * Time.deltaTime;
+            obstacle.transform.position = Vector3.MoveTowards(obstacle.transform.position, targetPos, speed * Time.deltaTime);
+
+            // Check if the obstacle has passed the player's position plus the despawn margin
+            if (obstacle.transform.position.x < playerTransform.position.x - despawnMargin)
+            {
+                Destroy(obstacle);
+                yield break;
+            }
 
             yield return null;
         }
