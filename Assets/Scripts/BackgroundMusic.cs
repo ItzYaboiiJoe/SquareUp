@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
 {
-    private static BackgroundMusic instance = null;
+    public static BackgroundMusic instance;
+    private AudioSource audioSource;
 
     void Awake()
     {
@@ -17,5 +18,15 @@ public class BackgroundMusic : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public void ToggleMusic(bool isMusicOn)
+    {
+        audioSource.volume = isMusicOn ? 0.05f : 0f;
     }
 }
