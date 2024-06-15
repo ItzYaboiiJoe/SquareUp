@@ -22,16 +22,18 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
-            //JUMP COMMAND
-            Jump();
+            Jump(); //This calls the method jump
         }
     }
 
     private void Jump()
     {
+        //Allows player to jump from the serialized Component
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+        //This calls soundJump from class SoundEffectsManager
         SoundEffectsManager.instance.PlaySound(SoundEffectsManager.instance.jumpSound);
 
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         isGrounded = false;
     }
     //check if player o nground based on layer asset
@@ -39,7 +41,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.contacts[0].normal.y > 0.5f)
         {
-
             isGrounded = true;
         }
     }
