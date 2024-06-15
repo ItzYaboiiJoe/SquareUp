@@ -15,10 +15,10 @@ public class ObjectSpawner : MonoBehaviour
     private void Update()
     {
         //Calculate time to spawn objects
-        if(Time.time >= nextSpawnTime)
+        if (Time.time >= nextSpawnTime)
         {
             SpawnObject();
-            nextSpawnTime = Time.time + 1f / spawnRate; 
+            nextSpawnTime = Time.time + 1f / spawnRate;
         }
     }
 
@@ -52,9 +52,9 @@ public class ObjectSpawner : MonoBehaviour
         StartCoroutine(MoveObjectTowardsPlayer(spawnedObject));
     }
 
-    IEnumerator MoveObjectTowardsPlayer(GameObject obj)
+    private IEnumerator MoveObjectTowardsPlayer(GameObject obj)
     {
-        while(obj != null)
+        while (obj != null)
         {
             // Move the object towards the player
             Vector2 direction = (player.position - obj.transform.position).normalized;
@@ -65,11 +65,10 @@ public class ObjectSpawner : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<PlayerManager>().GameOver();
+            PlayerManager.Instance.GameOver();
 
         }
     }
-
 }
