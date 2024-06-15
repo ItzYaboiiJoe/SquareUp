@@ -1259,9 +1259,9 @@ MonoBehaviour:
   - {fileID: 1307816825624009880, guid: 9d261cad277c43a46a4643ba0a5eb67f, type: 3}
   spawnPoint: {fileID: 674336182}
   player: {fileID: 6627876}
-  spawnRate: 2
-  objectSpeed: 100
-  nextSpawnTime: 4
+  spawnRate: 1
+  objectSpeed: 50
+  nextSpawnTime: 0
 --- !u!1 &866033834
 GameObject:
   m_ObjectHideFlags: 0

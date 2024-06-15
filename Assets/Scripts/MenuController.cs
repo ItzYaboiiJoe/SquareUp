@@ -59,4 +59,10 @@ public class MenuController : MonoBehaviour
         Debug.Log("Quitting Game...");
         Application.Quit();
     }
+
+    public void ResetHighScore()
+    {
+        PlayerPrefs.SetFloat("HighScore", 0);
+        Debug.Log("High Score reset to 0");
+    }
 }
