@@ -1220,6 +1220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674336182}
+  - component: {fileID: 674336183}
   m_Layer: 8
   m_Name: ObstSpawner
   m_TagString: Obstacle
@@ -1242,6 +1243,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674336183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674336181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5a995293aebb148a63d81ae22d54d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSpawner:
+  - {fileID: 1307816825624009880, guid: 9d261cad277c43a46a4643ba0a5eb67f, type: 3}
+  spawnPoint: {fileID: 674336182}
+  player: {fileID: 6627876}
+  spawnRate: 2
+  objectSpeed: 100
+  nextSpawnTime: 4
 --- !u!1 &866033834
 GameObject:
   m_ObjectHideFlags: 0

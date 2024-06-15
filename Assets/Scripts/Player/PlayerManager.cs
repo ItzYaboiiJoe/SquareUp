@@ -19,6 +19,12 @@ public class PlayerManager : MonoBehaviour
     }
   }
 
+    public void GameOver()
+    {
+        //TODO Create a system for restarting level (despawn || repawn player
+        Debug.Log("Game Over");
+    }
+
   
 
 }
