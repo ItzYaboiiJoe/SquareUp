@@ -5,6 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public static bool GamePaused = false;
+
+    public GameObject pauseMenuUI;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GamePaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GamePaused = false;
+    }
+
+    public void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GamePaused = true;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("GameScene");
@@ -17,6 +50,13 @@ public class MenuController : MonoBehaviour
 
     public void Home()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MenuScene");
+    }
+
+    public void Quit()
+    {
+        Debug.Log("Quitting Game...");
+        Application.Quit();
     }
 }
