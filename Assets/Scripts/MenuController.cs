@@ -9,6 +9,14 @@ public class MenuController : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject gameOverUIScreen; //rename to avoid confused with static variable
+    public static GameObject gameOverUI;
+
+    private void Awake()
+    {
+        gameOverUI = gameOverUIScreen;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -41,6 +49,7 @@ public class MenuController : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1f;
     }
 
     public void Settings()
@@ -64,5 +73,19 @@ public class MenuController : MonoBehaviour
     {
         PlayerPrefs.SetFloat("HighScore", 0);
         Debug.Log("High Score reset to 0");
+    }
+
+    public static void GameOverLoad()
+    {
+        Debug.Log("GAMEOVER has been grabbed from menu contr");
+        Time.timeScale = 0f;
+        if(gameOverUI != null)
+        {
+            gameOverUI.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("Game over UI not assigned");
+        }
     }
 }

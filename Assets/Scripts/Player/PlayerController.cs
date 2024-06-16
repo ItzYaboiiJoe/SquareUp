@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isCrouching;
 
+    //public static SoundManager Instance { get; private set; }
+    public static MenuController Instance { get; private set; }
+  //  public MenuController menuController;
+
+
     private Vector3 originalScale;
 
     // Start is called before the first frame update
@@ -81,7 +86,7 @@ public class PlayerController : MonoBehaviour
     }
     private void GameOver()
     {
-        SceneManager.LoadScene("MenuScene");
         Debug.Log("Game OVER sucka");
+        MenuController.GameOverLoad();
     }
 }
