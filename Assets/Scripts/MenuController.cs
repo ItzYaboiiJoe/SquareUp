@@ -77,7 +77,6 @@ public class MenuController : MonoBehaviour
 
     public static void GameOverLoad()
     {
-        Debug.Log("GAMEOVER has been grabbed from menu contr");
         Time.timeScale = 0f;
         if (gameOverUI != null)
         {

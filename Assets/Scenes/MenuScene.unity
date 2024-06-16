@@ -776,6 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
+  gameOverUIScreen: {fileID: 0}
 --- !u!4 &959951216
 Transform:
   m_ObjectHideFlags: 0
