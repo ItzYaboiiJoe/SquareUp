@@ -8,9 +8,12 @@ public class WarningScreenManager : MonoBehaviour
     public GameObject warningScreen;
     public TMP_Text warningMessageText;
 
+    private MenuController menuController;
+
     private void Start()
     {
         HideWarningScreen();
+        menuController = FindObjectOfType<MenuController>();
     }
 
     public void ShowWarningScreen(TMP_Text messageText)
@@ -22,6 +25,10 @@ public class WarningScreenManager : MonoBehaviour
     public void HideWarningScreen()
     {
         warningScreen.SetActive(false);
+        if (menuController != null)
+        {
+            menuController.currentCanvas.gameObject.SetActive(true);
+        }
     }
 
     public void ConfirmResetHighScore()

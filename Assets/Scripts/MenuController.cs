@@ -15,6 +15,8 @@ public class MenuController : MonoBehaviour
 
     public TMP_Text yourMessageText;
 
+    public Canvas currentCanvas;
+
     private void Awake()
     {
         gameOverUI = gameOverUIScreen;
@@ -77,6 +79,7 @@ public class MenuController : MonoBehaviour
         WarningScreenManager warningScreenManager = GetComponent<WarningScreenManager>();
         if (warningScreenManager != null && yourMessageText != null)
         {
+            currentCanvas.gameObject.SetActive(false);
             warningScreenManager.ShowWarningScreen(yourMessageText);
         }
         else
