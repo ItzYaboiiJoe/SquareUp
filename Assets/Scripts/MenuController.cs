@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,8 @@ public class MenuController : MonoBehaviour
 
     public GameObject gameOverUIScreen; //rename to avoid confused with static variable
     public static GameObject gameOverUI;
+
+    public TMP_Text yourMessageText;
 
     private void Awake()
     {
@@ -71,8 +74,15 @@ public class MenuController : MonoBehaviour
 
     public void ResetHighScore()
     {
-        PlayerPrefs.SetFloat("HighScore", 0);
-        Debug.Log("High Score reset to 0");
+        WarningScreenManager warningScreenManager = GetComponent<WarningScreenManager>();
+        if (warningScreenManager != null && yourMessageText != null)
+        {
+            warningScreenManager.ShowWarningScreen(yourMessageText);
+        }
+        else
+        {
+            Debug.LogError("WarningScreenManager or yourMessageText not found or assigned.");
+        }
     }
 
     public static void GameOverLoad()
