@@ -79,8 +79,15 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("GAMEOVER has been grabbed from menu contr");
         Time.timeScale = 0f;
-        if(gameOverUI != null)
+        if (gameOverUI != null)
         {
+            // Update the game over score texts
+            ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
+            if (scoreManager != null)
+            {
+                scoreManager.UpdateGameOverScore();
+            }
+
             gameOverUI.SetActive(true);
         }
         else

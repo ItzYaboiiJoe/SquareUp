@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,9 @@ public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
     public Text highScoreText;
+
+    public TMP_Text gameOverScoreText;
+    public TMP_Text gameOverHighScoreText;
 
     public float scoreCount;
     public float highScoreCount;
@@ -46,5 +50,19 @@ public class ScoreManager : MonoBehaviour
     {
         // Optionally save the high score when the script is destroyed
         PlayerPrefs.SetFloat("HighScore", highScoreCount);
+    }
+
+    public void UpdateGameOverScore()
+    {
+        // Update the game over score texts
+        if (gameOverScoreText != null)
+        {
+            gameOverScoreText.text = "Score: " + (int)scoreCount;
+        }
+
+        if (gameOverHighScoreText != null)
+        {
+            gameOverHighScoreText.text = "High Score: " + (int)highScoreCount;
+        }
     }
 }
