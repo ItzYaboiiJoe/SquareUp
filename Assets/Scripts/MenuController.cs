@@ -8,7 +8,6 @@ public class MenuController : MonoBehaviour
     public static bool GamePaused = false;
 
     public GameObject pauseMenuUI;
-    public GameObject gameOverUI;
 
     void Update()
     {
@@ -65,10 +64,5 @@ public class MenuController : MonoBehaviour
     {
         PlayerPrefs.SetFloat("HighScore", 0);
         Debug.Log("High Score reset to 0");
-    }
-
-    public void gameOver()
-    {
-        gameOverUI.SetActive(true);
     }
 }
