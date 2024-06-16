@@ -24,8 +24,15 @@ public class SkinUI : MonoBehaviour
         purchaseButton.interactable = !skin.isPurchased;
         equipButton.interactable = skin.isPurchased;
 
-        purchaseButton.onClick.AddListener(() => PurchaseSkin());
-        equipButton.onClick.AddListener(() => EquipSkin());
+        purchaseButton.interactable = !skin.isPurchased;
+        equipButton.interactable = skin.isPurchased;
+
+        purchaseButton.onClick.RemoveAllListeners();
+        equipButton.onClick.RemoveAllListeners();
+
+        //add new listeners
+        purchaseButton.onClick.AddListener(PurchaseSkin);
+        equipButton.onClick.AddListener(EquipSkin);
     }
 
     void PurchaseSkin()
