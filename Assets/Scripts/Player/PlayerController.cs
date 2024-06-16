@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -73,5 +74,14 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            GameOver();
+        }
+    }
+    private void GameOver()
+    {
+        SceneManager.LoadScene("MenuScene");
+        Debug.Log("Game OVER sucka");
     }
 }

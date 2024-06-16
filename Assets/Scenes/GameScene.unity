@@ -911,7 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0.4
+  parallaxEffectMultiplier: 9.6
 --- !u!212 &365745191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0
+  parallaxEffectMultiplier: 10
 --- !u!212 &664451663
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2098,7 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0.3
+  parallaxEffectMultiplier: 9.7
 --- !u!212 &981461648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2330,7 +2330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0
+  parallaxEffectMultiplier: 10
 --- !u!212 &1036139746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2428,7 +2428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0.2
+  parallaxEffectMultiplier: 9.8
 --- !u!212 &1134450733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2659,7 +2659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0.4
+  parallaxEffectMultiplier: 9.6
 --- !u!212 &1141349150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2849,9 +2849,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1279732174}
   - component: {fileID: 1279732173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ObstacleSpawner
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2933,7 +2933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0.1
+  parallaxEffectMultiplier: 9.9
 --- !u!212 &1314700487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3287,7 +3287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0.2
+  parallaxEffectMultiplier: 9.8
 --- !u!212 &1507637626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3603,7 +3603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0.1
+  parallaxEffectMultiplier: 9.9
 --- !u!212 &1606233574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4003,7 +4003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1805615362
 Transform:
   m_ObjectHideFlags: 0
@@ -4069,7 +4069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 0.3
+  parallaxEffectMultiplier: 9.7
 --- !u!212 &1872143814
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4411,7 +4411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2016186985
 Transform:
   m_ObjectHideFlags: 0
