@@ -68,6 +68,10 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
+    public void Shop()
+    {
+        SceneManager.LoadScene("ShopScene");
+    }
     public void Quit()
     {
         Debug.Log("Quitting Game...");

@@ -857,7 +857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 9.6
 --- !u!212 &365745191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1434,7 +1433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 10
 --- !u!212 &664451663
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1905,6 +1903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1384695789}
   gameOverUIScreen: {fileID: 978661658}
+  yourMessageText: {fileID: 0}
+  currentCanvas: {fileID: 0}
 --- !u!4 &963536801
 Transform:
   m_ObjectHideFlags: 0
@@ -2065,7 +2065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 9.7
 --- !u!212 &981461648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2297,7 +2296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 10
 --- !u!212 &1036139746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2395,7 +2393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 9.8
 --- !u!212 &1134450733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2626,7 +2623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 9.6
 --- !u!212 &1141349150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2904,7 +2900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 9.9
 --- !u!212 &1314700487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3258,7 +3253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 9.8
 --- !u!212 &1507637626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3574,7 +3568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 9.9
 --- !u!212 &1606233574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4040,7 +4033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: 9.7
 --- !u!212 &1872143814
 SpriteRenderer:
   m_ObjectHideFlags: 0
