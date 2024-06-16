@@ -1951,7 +1951,6 @@ GameObject:
   - component: {fileID: 978661659}
   - component: {fileID: 978661661}
   - component: {fileID: 978661660}
-  - component: {fileID: 978661662}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -2021,26 +2020,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978661658}
   m_CullTransparentMesh: 1
---- !u!114 &978661662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978661658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6860c430b7c80cb4d892a3f6bc82de97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
-  gameOverScoreText: {fileID: 0}
-  gameOverHighScoreText: {fileID: 0}
-  scoreCount: 0
-  highScoreCount: 0
-  pointsPerSecond: 0
-  scoreIncreasing: 0
 --- !u!1 &981461645
 GameObject:
   m_ObjectHideFlags: 0
