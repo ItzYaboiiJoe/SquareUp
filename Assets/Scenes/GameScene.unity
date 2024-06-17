@@ -1932,13 +1932,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6860c430b7c80cb4d892a3f6bc82de97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleSpawner: {fileID: 1279732173}
   scoreText: {fileID: 1680669010}
   highScoreText: {fileID: 399753275}
   gameOverScoreText: {fileID: 238489312}
   gameOverHighScoreText: {fileID: 2118814427}
   scoreCount: 0
   highScoreCount: 0
-  pointsPerSecond: 5
+  pointsPerSecond: 6
   scoreIncreasing: 1
 --- !u!1 &978661658
 GameObject:
