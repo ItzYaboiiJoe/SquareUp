@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1a01b945cdd4d0795f93433d5649fe, type: 3}
   m_Name: SlimeBoy
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  cost: 0
+  title: SlimeBoy
+  skinImage: {fileID: 0}
+  description: 'A slime hopping '
+  cost: 100

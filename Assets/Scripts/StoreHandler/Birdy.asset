@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1a01b945cdd4d0795f93433d5649fe, type: 3}
   m_Name: Birdy
   m_EditorClassIdentifier: 
-  title: 
+  title: The Red Bird
   skinImage: {fileID: 0}
-  description: 
-  cost: 0
+  description: A flying red bird
+  cost: 250
