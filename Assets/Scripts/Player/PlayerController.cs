@@ -31,13 +31,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (isGrounded && Input.GetButtonDown("Jump") || IsJumpTouch())
         {
             Jump(); //This calls the method jump
         }
 
         // Check for crouch input
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch") || IsCrouchTouch())
         {
             Crouch();
         }
