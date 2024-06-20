@@ -956,9 +956,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 365745188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 26
 --- !u!212 &365745191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1500,7 +1501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664451661}
   - component: {fileID: 664451663}
-  - component: {fileID: 664451662}
+  - component: {fileID: 664451664}
   m_Layer: 0
   m_Name: Layer_0
   m_TagString: Untagged
@@ -1523,18 +1524,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2016186985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &664451662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664451660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &664451663
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1587,6 +1576,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &664451664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664451660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 30
 --- !u!1 &716916424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,10 +1904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2431,9 +2433,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 981461645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 27
 --- !u!212 &981461648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2662,9 +2665,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036139743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 30
 --- !u!212 &1036139746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2791,9 +2795,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1134450730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 28
 --- !u!212 &1134450733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3021,9 +3026,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1141349147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 26
 --- !u!212 &1141349150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3298,9 +3304,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1314700484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 29
 --- !u!212 &1314700487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3480,10 +3487,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3651,9 +3658,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1507637623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 28
 --- !u!212 &1507637626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3966,9 +3974,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1606233571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 29
 --- !u!212 &1606233574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4431,9 +4440,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872143811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b251225ad0c4bd39f4c661d826a07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca7138aeccd045c98b396a0de955f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffectMultiplier: 27
 --- !u!212 &1872143814
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4535,10 +4545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
