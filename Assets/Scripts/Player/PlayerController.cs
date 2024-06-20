@@ -46,6 +46,40 @@ public class PlayerController : MonoBehaviour
             StandUp();
         }
     }
+    private bool IsJumpTouch()
+    {
+        if (Input.touchCount > 0)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began)
+                {
+                    // Check if the touch position is in the upper half of the screen
+                    if (touch.position.y > Screen.height / 2)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private bool IsCrouchTouch()
+    {
+        if (Input.touchCount > 0)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                // Check if the touch position is in the lower half of the screen
+                if (touch.position.y < Screen.height / 2)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     private void Jump()
     {

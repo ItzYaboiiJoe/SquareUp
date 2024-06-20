@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f636edac84eac43fe9f74b2fd543e790, type: 3}
-  m_Name: Skin
+  m_Script: {fileID: 11500000, guid: 9a1a01b945cdd4d0795f93433d5649fe, type: 3}
+  m_Name: PlayerBos
   m_EditorClassIdentifier: 
-  skinName: 
-  skinSprite: {fileID: 0}
-  cost: 0
-  isPurchased: 0
+  title: DevCharcter
+  description: this is the first sprite to be made
+  cost: 500

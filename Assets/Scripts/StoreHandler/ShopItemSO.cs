@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "shopMenu", menuName = "Scriptable Objects/new Shop Item", order = 1)]
-public class ShopItem : ScriptableObject
+public class ShopItemSO : ScriptableObject
 {
     public string title;
-    public Image skinImage;
+//public Image skinImage;
     public string description;
     public int cost;
 }

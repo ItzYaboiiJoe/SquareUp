@@ -70,7 +70,7 @@ public class MenuController : MonoBehaviour
 
     public void Shop()
     {
-        SceneManager.LoadScene("ShopScene");
+        SceneManager.LoadScene("StoreScene");
     }
     public void Quit()
     {
