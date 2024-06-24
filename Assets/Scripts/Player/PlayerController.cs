@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
             Jump(); //This calls the method jump
         }
 
+        /*
         // Check for crouch input
         if (Input.GetButtonDown("Crouch") || IsCrouchTouch())
         {
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             StandUp();
         }
+        */
     }
     private bool IsJumpTouch()
     {
@@ -64,7 +66,8 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
-
+    //THIS IS THE TOUCH FEATURE FOR CROUCHING
+    /* 
     private bool IsCrouchTouch()
     {
         if (Input.touchCount > 0)
@@ -80,6 +83,7 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
+    */
 
     private void Jump()
     {
