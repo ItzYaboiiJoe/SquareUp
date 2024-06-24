@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a1a01b945cdd4d0795f93433d5649fe, type: 3}
-  m_Name: Birdy
+  m_Name: DeveloperFirst
   m_EditorClassIdentifier: 
-  title: Square Bird
-  skinImage: {fileID: 21300000, guid: c6d150d50b7194f5483657b22599b307, type: 3}
-  description: Ever seen a bird with a 90 degree angle?
-  baseCost: 15
+  title: DevSquare
+  skinImage: {fileID: -7354186609717557589, guid: e78c220701f5664418246ed51f17b1e7, type: 3}
+  description: The first sprite made
+  baseCost: 100

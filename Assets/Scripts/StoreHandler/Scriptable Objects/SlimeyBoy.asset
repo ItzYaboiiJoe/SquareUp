@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a1a01b945cdd4d0795f93433d5649fe, type: 3}
-  m_Name: SlimeBoy
+  m_Name: SlimeyBoy
   m_EditorClassIdentifier: 
-  title: Slimey Kidd
+  title: Slime Boy
   skinImage: {fileID: 1923523692231115547, guid: ee21bf7dabc87c84cbe36234ccc21c37, type: 3}
-  description: He bouncing like there's no tomorrow
-  baseCost: 50
+  description: He can bounce over all obstacles
+  baseCost: 20

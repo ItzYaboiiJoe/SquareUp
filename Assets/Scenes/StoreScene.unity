@@ -1966,9 +1966,9 @@ MonoBehaviour:
   coins: 0
   coinUI: {fileID: 801079058}
   shopItemSO:
-  - {fileID: 11400000, guid: 54641bee79cad4a9ebda02c48aac9af6, type: 2}
-  - {fileID: 11400000, guid: 86048af182c20434d97d48addad5b756, type: 2}
-  - {fileID: 11400000, guid: 8833ffe0034564e56a2af57d074edf89, type: 2}
+  - {fileID: 11400000, guid: 71f6c651f69e943f59ef838b12162b08, type: 2}
+  - {fileID: 11400000, guid: fa6044302e3d047beb8704ad08e17f82, type: 2}
+  - {fileID: 11400000, guid: 05f6fd53016db437690eeeced7e8a98d, type: 2}
   shopPanelsGO:
   - {fileID: 1813479477}
   - {fileID: 690656643}
@@ -2231,7 +2231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2345438058001168549, guid: 63b78d90cf64c47e080ad5159925f9d3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2345438058001168549, guid: 63b78d90cf64c47e080ad5159925f9d3, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2239,7 +2239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2345438058001168549, guid: 63b78d90cf64c47e080ad5159925f9d3, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2345438058001168549, guid: 63b78d90cf64c47e080ad5159925f9d3, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2279,11 +2279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2345438058001168549, guid: 63b78d90cf64c47e080ad5159925f9d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 160.67155
       objectReference: {fileID: 0}
     - target: {fileID: 2345438058001168549, guid: 63b78d90cf64c47e080ad5159925f9d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -286.9712
       objectReference: {fileID: 0}
     - target: {fileID: 2345438058001168549, guid: 63b78d90cf64c47e080ad5159925f9d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2303,7 +2303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5007175855485034089, guid: 63b78d90cf64c47e080ad5159925f9d3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
