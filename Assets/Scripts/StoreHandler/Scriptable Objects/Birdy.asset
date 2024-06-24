@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Birdy
   m_EditorClassIdentifier: 
   title: Square Bird
+  skinImage: {fileID: 21300000, guid: c6d150d50b7194f5483657b22599b307, type: 3}
   description: Ever seen a bird with a 90 degree angle?
   baseCost: 15

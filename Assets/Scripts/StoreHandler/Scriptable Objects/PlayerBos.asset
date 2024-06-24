@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: PlayerBos
   m_EditorClassIdentifier: 
   title: DevCharcter
+  skinImage: {fileID: -7354186609717557589, guid: e78c220701f5664418246ed51f17b1e7, type: 3}
   description: this is the first sprite to be made
   baseCost: 500

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ShopItemSO : ScriptableObject
 {
     public string title;
-//public Image skinImage;
+    public Sprite skinImage;
     public string description;
     public int baseCost;
 }

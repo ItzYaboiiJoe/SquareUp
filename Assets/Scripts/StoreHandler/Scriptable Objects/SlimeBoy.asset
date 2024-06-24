@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: SlimeBoy
   m_EditorClassIdentifier: 
   title: Slimey Kidd
+  skinImage: {fileID: 1923523692231115547, guid: ee21bf7dabc87c84cbe36234ccc21c37, type: 3}
   description: He bouncing like there's no tomorrow
   baseCost: 50
