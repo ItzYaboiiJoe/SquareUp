@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: DevCharcter
   description: this is the first sprite to be made
-  cost: 500
+  baseCost: 500

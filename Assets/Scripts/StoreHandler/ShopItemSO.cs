@@ -9,5 +9,5 @@ public class ShopItemSO : ScriptableObject
     public string title;
 //public Image skinImage;
     public string description;
-    public int cost;
+    public int baseCost;
 }

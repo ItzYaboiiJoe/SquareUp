@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a1a01b945cdd4d0795f93433d5649fe, type: 3}
-  m_Name: shopMenu
+  m_Name: SlimeBoy
   m_EditorClassIdentifier: 
-  title: Birdy
-  description: the bird dude
-  cost: 100
+  title: Slimey Kidd
+  description: He bouncing like there's no tomorrow
+  baseCost: 50

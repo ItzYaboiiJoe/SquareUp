@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a1a01b945cdd4d0795f93433d5649fe, type: 3}
-  m_Name: shopMenu 1
+  m_Name: Birdy
   m_EditorClassIdentifier: 
-  title: ZTestinfg 1
-  description: this is a test
-  cost: 50
+  title: Square Bird
+  description: Ever seen a bird with a 90 degree angle?
+  baseCost: 15
