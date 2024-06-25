@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{2137E329-F0AB-5590-9BD8-7BEF5CB8B84D}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="84474873-8b2f-461f-8b55-6f1d2ba4c6c7" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MenuController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SquareUp">
+            <Node name="Assets" expanded="True">
+              <Node name="Prefabs" expanded="True" />
+              <Node name="Scenes" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Player" expanded="True" />
+                <Node name="StoreHandler" expanded="True" />
+                <Node name="MenuController.cs" selected="True" />
+              </Node>
+              <Node name="TextMesh Pro" expanded="True">
+                <Node name="Examples &amp; Extras" expanded="True" />
+                <Node name="Shaders" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Packages" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
