@@ -16,22 +16,17 @@ public class ShopManager : MonoBehaviour
         for(int i = 0; i < shopItemSO.Length; i++)
         {
             shopPanelsGO[i].SetActive(true);
-            coinUI.text = "Coins: " + coins.ToString();
-            LoadPanels();
-            CheckPurhaseable();
         }
-      
-        
-    }
-    private void Update()
-    {
-        
+        LoadPanels();
+        CheckPurhaseable();
+        UpdateCoinUI();
+
     }
 
     public void AddCoins()
     {
         coins++;
-        coinUI.text = "Coins: " + coins.ToString();
+        UpdateCoinUI();
         CheckPurhaseable();
     }
         public void CheckPurhaseable()
@@ -50,7 +45,7 @@ public class ShopManager : MonoBehaviour
        if(coins >= shopItemSO[btnNo].baseCost)
         {
             coins = coins - shopItemSO[btnNo].baseCost;
-            coinUI.text = "Coins: " + coins.ToString();
+            UpdateCoinUI();
             CheckPurhaseable();
             //unloks item
         }
@@ -63,7 +58,11 @@ public class ShopManager : MonoBehaviour
             shopPanels[i].titleText.text = shopItemSO[i].title;
             shopPanels[i].descriptionTxt.text = shopItemSO[i].description;
             shopPanels[i].costTxt.text = "Coins: " + shopItemSO[i].baseCost.ToString();
-
+            shopPanels[i].skinImage.sprite = shopItemSO[i].skinImage;
         }
+    }
+    private void UpdateCoinUI()
+    {
+        coinUI.text = "Coins: " + coins.ToString();
     }
 }
