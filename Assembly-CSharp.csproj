@@ -60,14 +60,20 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.27f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Compile Include="Assets/Scripts/WarningScreenManage 2.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerSpawn 2.cs" />
+=======
+>>>>>>> Stashed changes
     <Compile Include="Assets/Scripts/ObstacleSpawner.cs" />
     <Compile Include="Assets/Scripts/WarningScreenManage.cs" />
     <Compile Include="Assets/Scripts/Sound/BackgroundMusic.cs" />
     <Compile Include="Assets/Scripts/Sound/SoundEffectsManager.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets/Scripts/ObstacleSpawner 2.cs" />
     <Compile Include="Assets/Scripts/Parallax 2.cs" />
+=======
+>>>>>>> Stashed changes
     <Compile Include="Assets/Scripts/Player/PlayerController.cs" />
     <Compile Include="Assets/Asset/Free 2D Cartoon Parallax Background/Demo/Script/BackgroundControl_0.cs" />
     <Compile Include="Assets/Scripts/Sound/ToggleSFX.cs" />
