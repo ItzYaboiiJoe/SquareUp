@@ -12,11 +12,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float crouchScale = 0.5f;
     private Rigidbody2D rb;
     private bool isGrounded;
-    private bool isCrouching;
+    // private bool isCrouching;
 
     //public static SoundManager Instance { get; private set; }
     public static MenuController Instance { get; private set; }
-  //  public MenuController menuController;
+    //  public MenuController menuController;
 
 
     private Vector3 originalScale;
@@ -96,19 +96,19 @@ public class PlayerController : MonoBehaviour
         isGrounded = false;
     }
 
-    private void Crouch()
-    {
-        isCrouching = true;
-        // Reduce the player's scale when crouching
-        transform.localScale = new Vector3(originalScale.x, originalScale.y * crouchScale, originalScale.z);
-    }
+    // private void Crouch()
+    // {
+    //     isCrouching = true;
+    //     // Reduce the player's scale when crouching
+    //     transform.localScale = new Vector3(originalScale.x, originalScale.y * crouchScale, originalScale.z);
+    // }
 
-    private void StandUp()
-    {
-        isCrouching = false;
-        // Restore the player's original scale when standing up
-        transform.localScale = originalScale;
-    }
+    // private void StandUp()
+    // {
+    //     isCrouching = false;
+    //     // Restore the player's original scale when standing up
+    //     transform.localScale = originalScale;
+    // }
 
     //check if player o nground based on layer asset
     private void OnCollisionEnter2D(Collision2D collision)

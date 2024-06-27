@@ -2176,8 +2176,9 @@ MonoBehaviour:
   gameOverHighScoreText: {fileID: 2118814427}
   scoreCount: 0
   highScoreCount: 0
-  pointsPerSecond: 6
+  pointsPerSecond: 10
   scoreIncreasing: 1
+  obstacleSpawner: {fileID: 0}
 --- !u!1 &970776230
 GameObject:
   m_ObjectHideFlags: 0

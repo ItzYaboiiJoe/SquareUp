@@ -5,8 +5,8 @@ public class ObstacleSpawner : MonoBehaviour
 {
     public GameObject obstaclePrefab;
     public Transform spawnPoint; // Reference to the empty GameObject in the scene
-    public float spawnInterval = 2f;
-    public float obstacleSpeed = 3f;
+    public float spawnInterval = 6f; // Start with 6
+    public float obstacleSpeed = 50f; // Start with 50
     public Transform despawnPoint;
 
     private void Start()
