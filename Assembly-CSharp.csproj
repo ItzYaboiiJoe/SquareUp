@@ -73,7 +73,6 @@
     <Compile Include="Assets\Scripts\Sound\ToggleSFX.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
-    <Compile Include="Assets\Asset\SpriteOld\UI button pack 2\Scene\CreateObj.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerSpawn.cs" />
     <Compile Include="Assets\Asset\Free 2D Cartoon Parallax Background\Demo\Script\ParallaxBackground_0.cs" />
