@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     //this allow variable to be adjusted in settings
     [SerializeField] public float jumpForce = 50f;
-    [SerializeField] public float crouchScale = 0.5f;
+    // [SerializeField] public float crouchScale = 0.5f;
     private Rigidbody2D rb;
     private bool isGrounded;
     // private bool isCrouching;
