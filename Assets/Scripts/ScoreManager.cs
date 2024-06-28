@@ -82,8 +82,26 @@ public class ScoreManager : MonoBehaviour
     {
         // Adjust spawn interval and obstacle speed for every 100 scoreCount
         int factor = (int)(scoreCount / 100);
-        float newSpawnInterval = Mathf.Max(0.5f, 6f - factor * 0.7f); // Start with 6
-        float newObstacleSpeed = 50f + factor * 15f; // Start with 50
+        float newSpawnInterval;
+        float newObstacleSpeed;
+
+        if (scoreCount < 800)
+        {
+            newSpawnInterval = Mathf.Max(1.2f, 6f - factor * 0.6f); // Start with 6, limit to 1.2
+            newObstacleSpeed = 50f + factor * 11f; // Start with 50, increase by 11
+        }
+        else if (scoreCount < 1000)
+        {
+            factor = (int)((scoreCount - 800) / 100); // Recalculate factor after 800 points
+            newSpawnInterval = 1.2f; // Fixed at 1.2 after 800 points until 1000
+            newObstacleSpeed = 138f + factor * 5f; // Start with 138, increase by 5
+        }
+        else
+        {
+            factor = (int)((scoreCount - 1000) / 100); // Recalculate factor after 1000 points
+            newSpawnInterval = Mathf.Max(0.9f, 1.2f - factor * 0.3f); // Start with 1.2, limit to 0.9
+            newObstacleSpeed = 144f + factor * 5f; // Continue to increase by 5
+        }
 
         if (obstacleSpawner.spawnInterval != newSpawnInterval || obstacleSpawner.obstacleSpeed != newObstacleSpeed)
         {
