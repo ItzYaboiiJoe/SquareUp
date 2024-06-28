@@ -56,11 +56,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (touch.phase == TouchPhase.Began)
                 {
-                    // Check if the touch position is in the upper half of the screen
-                    if (touch.position.y > Screen.height / 2)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
         }
@@ -126,5 +122,13 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Game OVER sucka");
         MenuController.GameOverLoad();
+    }
+     // Ensure isGrounded is set correctly when leaving ground objects
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.contacts[0].normal.y > 0.5f)
+        {
+            isGrounded = false;
+        }
     }
 }
