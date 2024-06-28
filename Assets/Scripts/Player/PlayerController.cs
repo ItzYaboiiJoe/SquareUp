@@ -14,14 +14,11 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     // private bool isCrouching;
 
-    //public static SoundManager Instance { get; private set; }
+  
     public static MenuController Instance { get; private set; }
-    //  public MenuController menuController;
-
 
     private Vector3 originalScale;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,7 +28,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isGrounded && Input.GetButtonDown("Jump") || IsJumpTouch())
+        if (isGrounded && (Input.GetButtonDown("Jump") || IsJumpTouch()))
         {
             Jump(); //This calls the method jump
         }
@@ -83,12 +80,9 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        //Allows player to jump from the serialized Component
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
         //This calls soundJump from class SoundEffectsManager
         SoundEffectsManager.instance.PlaySound(SoundEffectsManager.instance.jumpSound);
-
         isGrounded = false;
     }
 
@@ -107,30 +101,34 @@ public class PlayerController : MonoBehaviour
     // }
 
     //check if player o nground based on layer asset
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.contacts[0].normal.y > 0.5f)
+        // Check if the player is colliding with an object tagged as "Ground"
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
+
+        // If the player hits an obstacle
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             GameOver();
         }
     }
 
-        private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.contacts[0].normal.y > 0.5f)
+        // Ensure the player stays grounded when colliding with the ground
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
     }
-
-         // Ensure isGrounded is set correctly when leaving ground objects
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.contacts[0].normal.y > 0.5f)
+        // Ensure the player is no longer grounded when leaving the ground
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }
@@ -141,5 +139,4 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Game OVER sucka");
         MenuController.GameOverLoad();
     }
-
 }
