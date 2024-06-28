@@ -118,12 +118,16 @@ public class PlayerController : MonoBehaviour
             GameOver();
         }
     }
-    private void GameOver()
+
+        private void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log("Game OVER sucka");
-        MenuController.GameOverLoad();
+        if (collision.contacts[0].normal.y > 0.5f)
+        {
+            isGrounded = true;
+        }
     }
-     // Ensure isGrounded is set correctly when leaving ground objects
+
+         // Ensure isGrounded is set correctly when leaving ground objects
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.contacts[0].normal.y > 0.5f)
@@ -131,4 +135,11 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    private void GameOver()
+    {
+        Debug.Log("Game OVER sucka");
+        MenuController.GameOverLoad();
+    }
+
 }
