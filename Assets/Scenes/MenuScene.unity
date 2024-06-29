@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d722b6b02eb7b564d9edde9ccb77768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSound: {fileID: 8300000, guid: 74f9da0bc9b56714697d61501eb67cf5, type: 3}
+  jumpSound: {fileID: 8300000, guid: 699172bd341374f46ad25cb496c20adb, type: 3}
   collisionSound: {fileID: 0}
 --- !u!82 &272849916
 AudioSource:
@@ -197,13 +197,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.443
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 69
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -271,7 +271,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.068
       inSlope: 0
       outSlope: 0
       tangentMode: 0
