@@ -34,7 +34,6 @@ public class ObstacleSpawner : MonoBehaviour
         {
             if (obstacle.transform.position.x < despawnPoint.position.x)
             {
-                Debug.Log("Obstacle passed despawn point: " + obstacle.name);
                 Destroy(obstacle);
             }
         }
