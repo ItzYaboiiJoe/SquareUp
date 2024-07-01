@@ -51,6 +51,10 @@
 *.VC.db
 *.vscode
 
+#Folders
+Firebase/
+ExternalDependencyManager/
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
@@ -75,7 +79,4 @@ crashlytics-build.properties
 **/[Aa]ssets/[Ss]treamingAssets/aa.meta
 **/[Aa]ssets/[Ss]treamingAssets/aa/*
 *.meta
-<<<<<<< Updated upstream
-=======
 /Assets/Asset/ArtByKandles
->>>>>>> Stashed changes
