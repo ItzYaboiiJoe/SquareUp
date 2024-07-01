@@ -18,4 +18,9 @@ public class GameInitializer : MonoBehaviour
 
         PlayerPrefs.Save();
     }
+
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
 }
