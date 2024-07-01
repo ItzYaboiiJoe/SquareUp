@@ -50,6 +50,7 @@
 *.opendb
 *.VC.db
 *.vscode
+*.plist
 
 #Folders
 Firebase/
