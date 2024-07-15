@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 787713105}
   - component: {fileID: 787713104}
   m_Layer: 5
-  m_Name: Background new
+  m_Name: Background Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
