@@ -11,7 +11,7 @@ https://developers.google.com/admob/unity/quick-start
 
 
 When having failed to find frameworks for Unity to xcode build we need to use cocoapods and force update or force install certain things 
-run this command if having build errors in Xcode "arch -86_64 pod install"
+run this command if having build errors in Xcode "arch -x86_64 pod install"
 NOTE: This can take a long time for it to complete so be patient!!!
 This will 
 1. analyze the dependencies, 
