@@ -5,7 +5,7 @@ using GoogleMobileAds.Api;
 
 public class GoogleMobileAdsDemoScript : MonoBehaviour
 {
-    private string _adUnitId = "1:819259713415:android:d8a89ba7ed2fe09de99522";
+    private string _adUnitId = "ca-app-pub-2728025143918077~8279140490";
 
     BannerView _bannerView;
 
@@ -17,6 +17,7 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
         {
             CreateBannerView();
             LoadAd();
+            ListenToAdEvents();
         });
     }
 
@@ -27,7 +28,7 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
         // If we already have a banner, destroy the old one.
         if (_bannerView != null)
         {
-            // DestroyAd();
+            DestroyBannerView();
         }
 
         // Create a 320x50 banner at top of the screen

@@ -81,3 +81,5 @@ crashlytics-build.properties
 **/[Aa]ssets/[Ss]treamingAssets/aa/*
 *.meta
 /Assets/Asset/ArtByKandles
+Assembly-CSharp.csproj
+Assembly-CSharp.csproj

@@ -1,8 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+#if !UNITY_WEBGL
 using Firebase;
 using Firebase.Extensions;
+#endif
 
 public class GameInitializer : MonoBehaviour
 {
@@ -20,7 +24,9 @@ public class GameInitializer : MonoBehaviour
 
         PlayerPrefs.Save();
 
+#if !UNITY_WEBGL
         InitializeFirebase();
+#endif
     }
 
     private void Start()
@@ -28,6 +34,7 @@ public class GameInitializer : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+#if !UNITY_WEBGL
     void InitializeFirebase()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
@@ -45,4 +52,6 @@ public class GameInitializer : MonoBehaviour
             }
         });
     }
+#endif
+
 }
