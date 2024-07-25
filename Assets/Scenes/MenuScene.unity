@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d722b6b02eb7b564d9edde9ccb77768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSound: {fileID: 8300000, guid: 699172bd341374f46ad25cb496c20adb, type: 3}
+  jumpSound: {fileID: 8300000, guid: 2ca5343843d8c154890c3f018614d23b, type: 3}
   collisionSound: {fileID: 0}
 --- !u!82 &272849916
 AudioSource:

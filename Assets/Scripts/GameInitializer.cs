@@ -28,7 +28,7 @@ public class GameInitializer : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-     void InitializeFirebase()
+    void InitializeFirebase()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
