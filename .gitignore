@@ -51,6 +51,7 @@
 *.VC.db
 *.vscode
 *.plist
+*.csproj
 
 #Folders
 Firebase/
