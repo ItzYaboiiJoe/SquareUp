@@ -83,3 +83,4 @@ crashlytics-build.properties
 /Assets/Asset/ArtByKandles
 Assembly-CSharp.csproj
 Assembly-CSharp.csproj
+/node_modules
