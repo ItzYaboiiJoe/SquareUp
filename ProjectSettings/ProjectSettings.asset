@@ -810,7 +810,7 @@ PlayerSettings:
     Stadia: 
     Standalone: 
     VisionOS: 
-    WebGL: 
+    WebGL: FIREBASE
     Windows Store Apps: 
     XboxOne: 
     iPhone: 
