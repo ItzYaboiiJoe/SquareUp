@@ -85,3 +85,4 @@ crashlytics-build.properties
 Assembly-CSharp.csproj
 Assembly-CSharp.csproj
 /node_modules
+/Assembly-CSharp.csproj
