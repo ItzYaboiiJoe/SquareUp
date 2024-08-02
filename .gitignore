@@ -86,3 +86,6 @@ Assembly-CSharp.csproj
 Assembly-CSharp.csproj
 /node_modules
 /Assembly-CSharp.csproj
+*.csproj
+.vs/SquareUp/xs/project-cache/Assembly-CSharp-Debug.json
+.vs/SquareUp/xs/project-cache/Assembly-CSharp-Debug.json

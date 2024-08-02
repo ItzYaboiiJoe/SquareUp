@@ -1,12 +1,24 @@
 ﻿<Properties StartupConfiguration="{2137E329-F0AB-5590-9BD8-7BEF5CB8B84D}|">
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8920eda9-e2eb-400c-9551-c9d136501cf4" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WarningScreenManage.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="113" Column="10" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" />
+      <File FileName="Library/PackageCache/com.unity.2d.common@8.0.2/Runtime/UTess2D/Smoothen.cs" Line="148" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerSpawn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MenuController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GoogleMobileAdsDemoScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameInitializer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ObstacleSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Parallax.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ScoreManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/WarningScreenManage.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,9 +26,8 @@
           <Node name="SquareUp">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Player" expanded="True">
-                  <Node name="PlayerController.cs" selected="True" />
-                </Node>
+                <Node name="Player" expanded="True" />
+                <Node name="WarningScreenManage.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -24,6 +35,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d7a87069-32f6-418a-b4c1-20d611ec1747" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
