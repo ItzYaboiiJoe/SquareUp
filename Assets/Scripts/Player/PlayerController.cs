@@ -9,12 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     //this allow variable to be adjusted in settings
     [SerializeField] public float jumpForce = 50f;
-    // [SerializeField] public float crouchScale = 0.5f;
     private Rigidbody2D rb;
     private bool isGrounded;
-    // private bool isCrouching;
-
-  
     public static MenuController Instance { get; private set; }
 
     private Vector3 originalScale;
@@ -39,17 +35,6 @@ public class PlayerController : MonoBehaviour
             Jump(); //This calls the method jump
         }
 
-        /*
-        // Check for crouch input
-        if (Input.GetButtonDown("Crouch") || IsCrouchTouch())
-        {
-            Crouch();
-        }
-        else if (Input.GetButtonUp("Crouch"))
-        {
-            StandUp();
-        }
-        */
     }
     private bool IsJumpTouch()
     {
@@ -65,24 +50,6 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
-    //THIS IS THE TOUCH FEATURE FOR CROUCHING
-    /* 
-    private bool IsCrouchTouch()
-    {
-        if (Input.touchCount > 0)
-        {
-            foreach (Touch touch in Input.touches)
-            {
-                // Check if the touch position is in the lower half of the screen
-                if (touch.position.y < Screen.height / 2)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    */
 
     private void Jump()
     {
@@ -91,20 +58,6 @@ public class PlayerController : MonoBehaviour
         SoundEffectsManager.instance.PlaySound(SoundEffectsManager.instance.jumpSound);
         isGrounded = false;
     }
-
-    // private void Crouch()
-    // {
-    //     isCrouching = true;
-    //     // Reduce the player's scale when crouching
-    //     transform.localScale = new Vector3(originalScale.x, originalScale.y * crouchScale, originalScale.z);
-    // }
-
-    // private void StandUp()
-    // {
-    //     isCrouching = false;
-    //     // Restore the player's original scale when standing up
-    //     transform.localScale = originalScale;
-    // }
 
     //check if player o nground based on layer asset
 
@@ -140,12 +93,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void onTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Coin"))
         {
             //increase score when collecitng coin
             scoreManager.scoreCount += 100; //WE CAN CHANGE THIS LATER
+            Debug.Log("This just added score and it has been collider");
             Destroy(other.gameObject);
         }
     }
