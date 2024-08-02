@@ -19,10 +19,16 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 originalScale;
 
+    //get score manager info 
+    private ScoreManager scoreManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         originalScale = transform.localScale;
+
+        //find score manager scene
+        scoreManager = FindAnyObjectByType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -131,6 +137,16 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+        }
+    }
+
+    private void onTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            //increase score when collecitng coin
+            scoreManager.scoreCount += 100; //WE CAN CHANGE THIS LATER
+            Destroy(other.gameObject);
         }
     }
 
