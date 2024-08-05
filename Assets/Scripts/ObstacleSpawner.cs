@@ -19,17 +19,18 @@ public class ObstacleSpawner : MonoBehaviour
 
     private IEnumerator SpawnObstacles()
     {
-        while (true)
+    while (true)
         {
-            float spawnInterval = Random.Range(minSpawnInterval,maxSpawnInterval);
+            float spawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
 
-            //Randomly choose with thing to spawn
+            // Randomly choose which object to spawn
             GameObject objToSpawn = Random.value > 0.5f ? obstaclePrefab : coinPrefab;
+            GameObject spawnedObject = Instantiate(objToSpawn, spawnPoint.position, Quaternion.identity);
 
-            GameObject obstacle = Instantiate(objToSpawn, spawnPoint.position, Quaternion.identity);
+            Vector2 direction = (Vector2.zero - (Vector2)spawnedObject.transform.position).normalized;
+            spawnedObject.GetComponent<Rigidbody2D>().velocity = direction * obstacleSpeed;
 
-            Vector2 direction = (Vector2.zero - (Vector2)obstacle.transform.position).normalized;
-            obstacle.GetComponent<Rigidbody2D>().velocity = direction * obstacleSpeed;
+            Debug.Log($"Spawned {spawnedObject.tag} at {spawnPoint.position} with interval {spawnInterval}s");
 
             yield return new WaitForSeconds(spawnInterval);
         }
@@ -42,14 +43,17 @@ public class ObstacleSpawner : MonoBehaviour
         {
             if (obstacle.transform.position.x < despawnPoint.position.x)
             {
+                Debug.Log($"Destroying obstacle at {obstacle.transform.position}");
                 Destroy(obstacle);
             }
         }
-                foreach (var obstacle in GameObject.FindGameObjectsWithTag("Coin"))
+             // Check if any coins have passed the despawn point and destroy them
+        foreach (var coin in GameObject.FindGameObjectsWithTag("Coin"))
         {
-            if (obstacle.transform.position.x < despawnPoint.position.x)
+            if (coin.transform.position.x < despawnPoint.position.x)
             {
-                Destroy(obstacle);
+                Debug.Log($"Destroying coin at {coin.transform.position}");
+                Destroy(coin);
             }
         }
     }

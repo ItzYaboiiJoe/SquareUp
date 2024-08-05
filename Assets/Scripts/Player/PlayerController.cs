@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     }
     private bool IsJumpTouch()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0) 
         {
             foreach (Touch touch in Input.touches)
             {
@@ -63,7 +63,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the player is colliding with an object tagged as "Ground"
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
@@ -95,11 +94,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"Triggered by {other.gameObject.tag}");
+
         if (other.CompareTag("Coin"))
         {
-            //increase score when collecitng coin
-            scoreManager.scoreCount += 100; //WE CAN CHANGE THIS LATER
-            Debug.Log("This just added score and it has been collider");
+            scoreManager.scoreCount += 100; // Adjust this value as needed
+            Debug.Log("Collected coin and increased score");
             Destroy(other.gameObject);
         }
     }
